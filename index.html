@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .wrapper {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        /* background: linear-gradient(
+          to right,
+          rgb(81, 42, 117) 10%,
+          rgb(87, 48, 54) 40%,
+          rgb(87, 48, 54) 60%,
+          rgb(99, 46, 54) 70%,
+          rgb(62, 46, 77) 80%
+        ); */
+        background-color: black;
+      }
+      .door {
+        overflow: hidden;
+        position: relative;
+        z-index: 0;
+        height: 500px;
+        width: 400px;
+        border-radius: 10px;
+        border: 0.7em solid #fff;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 0 1em 16px rgba(33, 156, 243, 0.5),
+          0 0 2em 32px rgba(33, 156, 243, 0.5);
+      }
+      .door h3 {
+        position: relative;
+        font-size: 2rem;
+        top: 40%;
+      }
+      .star {
+        opacity: 0;
+        position: absolute;
+        filter: blur(1em);
+        width: 14.3%;
+        height: 10%;
+        background-color: #fff;
+        /* background: linear-gradient(); */
+        clip-path: polygon(
+          50% 0,
+          60% 35%,
+          100% 30%,
+          75% 60%,
+          90% 100%,
+          50% 70%,
+          10% 100%,
+          30% 60%,
+          0 30%,
+          35% 35%
+        );
+      }
+      .star1 {
+        position: absolute;
+
+        transform: scale(0.4) translate(-24rem, -960%);
+        animation: star1 3s ease-in-out forwards,
+          blink1 4s 7s ease-in-out infinite;
+      }
+      .shadow {
+        opacity: 0;
+        position: absolute;
+        width: 15%;
+        height: 15%;
+        background-color: hsl(56 100% 50%/0.4);
+
+        filter: blur(0.8em);
+      }
+
+      .one {
+        position: absolute;
+        transform: translate(-9.6rem, -450%);
+        width: 0.2%;
+        height: 10%;
+        opacity: 0;
+        /* background-color: rgb(189, 189, 75);
+        background-color: rgba(33, 156, 243, 0.5); */
+        background-color: #fff;
+        animation: star1 3s ease-in-out forwards,
+          blink1 4s 7s ease-in-out infinite;
+      }
+      .s1 {
+        transform: perspective(25em) scale(0.4) translate(-24em, -24em)
+          rotateX(40deg) rotateY(7deg);
+        animation: star1 3.5s ease-in-out forwards,
+          blink1 4s 7.5s ease-in-out infinite;
+      }
+      @keyframes star1 {
+        0% {
+          opacity: 0;
+        }
+        25% {
+          opacity: 0.25;
+        }
+        50% {
+          opacity: 0.5;
+        }
+        75% {
+          opacity: 0.75;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+      .star2 {
+        position: absolute;
+        transform: scale(0.5) translate(-12.8rem, -453%);
+        /* opacity: 0; */
+        animation: star1 3s 1s ease-in-out forwards,
+          blink1 4s 7s ease-in-out infinite;
+      }
+      .two {
+        position: absolute;
+        transform: translate(-6.4rem, -150%);
+        width: 0.2%;
+        height: 25%;
+        background-color: #fff;
+        opacity: 0;
+        animation: star1 3s 1s ease-in-out forwards,
+          blink1 4s 7s ease-in-out infinite;
+      }
+      .s2 {
+        transform: perspective(25em) scale(0.4) translate(-16rem, -290%)
+          rotateX(40deg) rotateY(7deg);
+        animation: star1 3s 1.5s ease-in-out forwards,
+          blink1 4s 7.5s ease-in-out infinite;
+      }
+
+      .star3 {
+        /* opacity: 0; */
+        position: absolute;
+        transform: scale(0.6) translate(-5.4rem, -160%);
+
+        animation: star1 3s 2s ease-in-out forwards,
+          blink1 4s 7s ease-in-out infinite;
+      }
+      .three {
+        opacity: 0;
+        position: absolute;
+        transform: translate(-3.2rem, -80%);
+        width: 0.2%;
+        height: 40%;
+        background-color: #fff;
+        animation: star1 3s 2s ease-in-out forwards,
+          blink1 4s 7s ease-in-out infinite;
+      }
+      .s3 {
+        transform: perspective(25em) scale(0.4) translate(-8em, -55%)
+          rotateX(60deg) rotateY(7deg);
+        animation: star1 3s 2.5s ease-in-out forwards,
+          blink1 4s 7.5s ease-in-out infinite;
+      }
+      .star4 {
+        /* opacity: 0; */
+        position: absolute;
+
+        transform: scale(0.7) translate(0.1rem, 20%);
+
+        animation: star1 3s 3s ease-in-out forwards,
+          blink1 4s 7s ease-in-out infinite;
+      }
+      .four {
+        opacity: 0;
+        position: absolute;
+        transform: translate(0.07rem, -52%);
+        width: 0.2%;
+        height: 55%;
+        background-color: #fff;
+        animation: star1 3s 3s ease-in-out forwards,
+          blink1 4s 7s ease-in-out infinite;
+      }
+      .s4 {
+        transform: perspective(25em) scale(0.4) translate(-0.1em, 120%)
+          rotateX(80deg) rotateY(-5deg);
+        animation: star1 3s 3.5s ease-in-out forwards,
+          blink1 4s 7.5s ease-in-out infinite;
+      }
+      .star5 {
+        position: absolute;
+        transform: scale(0.8) translate(4rem, 150%);
+        /* opacity: 0; */
+        animation: star1 3s 4s ease-in-out forwards,
+          blink1 4s 7s ease-in-out infinite;
+      }
+
+      .fifth {
+        opacity: 0;
+        position: absolute;
+        transform: translate(3.2rem, -35%);
+        width: 0.2%;
+        height: 60%;
+        background-color: #fff;
+        animation: star1 3s 4s ease-in-out forwards,
+          blink1 4s 7s ease-in-out infinite;
+      }
+      .s5 {
+        transform: perspective(25em) scale(0.4) translate(8.2rem, 310%)
+          rotateX(110deg) rotateY(-10deg);
+        animation: star1 3s 4.5s ease-in-out forwards,
+          blink1 4s 7.5s ease-in-out infinite;
+      }
+      .star6 {
+        position: absolute;
+        transform: scale(0.9) translate(7rem, 245%);
+        /* opacity: 0; */
+        animation: star1 3s 5s ease-in-out forwards,
+          blink1 4s 7s ease-in-out infinite;
+      }
+
+      .sixth {
+        opacity: 0;
+        position: absolute;
+        transform: translate(6.3rem, -23%);
+        width: 0.2%;
+        height: 70%;
+        background-color: #fff;
+        animation: star1 3s 5s ease-in-out forwards,
+          blink1 4s 7s ease-in-out infinite;
+      }
+      .s6 {
+        transform: perspective(25em) scale(0.4) translate(15em, 485%)
+          rotateX(120deg) rotateY(-12deg);
+        animation: star1 3s 5.5s ease-in-out forwards,
+          blink1 4s 7.5s ease-in-out infinite;
+      }
+      .star7 {
+        position: absolute;
+        transform: scale(1) translate(9.58rem, 310%);
+        /* opacity: 0; */
+        animation: star1 3s 6s ease-in-out forwards,
+          blink1 4s 7s ease-in-out infinite;
+      }
+
+      .seven {
+        opacity: 0;
+        position: absolute;
+        transform: translate(9.6rem, -16%);
+        width: 0.2%;
+        height: 77%;
+        background-color: #fff;
+        animation: star1 3s 6s ease-in-out forwards,
+          blink1 4s 7s ease-in-out infinite;
+      }
+      .s7 {
+        transform: perspective(25em) scale(0.4) translate(24em, 650%)
+          rotateX(130deg) rotateY(-10deg);
+        animation: star1 3s 6.5s ease-in-out forwards,
+          blink1 4s 7.5s ease-in-out infinite;
+      }
+      .moon {
+        position: absolute;
+        opacity: 0;
+        width: 100px;
+        height: 100px;
+        animation: star1 3s 7s ease-in-out forwards,
+          blink 4s 7s ease-in-out infinite;
+        border-radius: 50%;
+        box-shadow: 4px 20px 4px 4px #fff;
+        transform: rotate(45deg) translate(5px, 90px);
+      }
+      @keyframes blink {
+        50% {
+          box-shadow: 4px 20px 4px 4px rgba(255, 240, 0, 0);
+        }
+      }
+      @keyframes blink1 {
+        50% {
+          background-color: rgba(255, 244, 0, 0);
+        }
+      }
+      @media only screen and (max-width: 411px) {
+        .door {
+          height: 400px;
+          width: 300px;
+        }
+        .door h3 {
+          font-size: 1.5rem;
+          top: 45%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="door">
+        <h3 style="color: #fff">Ramadan Mubarak</h3>
+        <div class="moon"></div>
+        <span class="one"></span>
+        <span class="two"></span>
+        <span class="three"></span>
+        <span class="four"></span>
+        <span class="fifth"></span>
+        <span class="sixth"></span>
+        <span class="seven"></span>
+        <div class="star star1"></div>
+        <!-- <div class="shadow s1"></div> -->
+        <div class="star star2"></div>
+        <!-- <div class="shadow s2"></div> -->
+        <div class="star star3"></div>
+        <!-- <div class="shadow s3"></div> -->
+        <div class="star star4"></div>
+        <!-- <div class="shadow s4"></div> -->
+        <div class="star star5"></div>
+        <!-- <div class="shadow s5"></div> -->
+        <div class="star star6"></div>
+        <!-- <div class="shadow s6"></div> -->
+        <div class="star star7"></div>
+        <!-- <div class="shadow s7"></div> -->
+      </div>
+    </div>
+  </body>
+</html>
